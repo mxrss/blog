@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Musings of Software Dev</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<!--[if lt IE 9]>
+	<script src="http://www.michaeltroth.com//js/html5.js"></script>
+	<![endif]-->
+
+    <link href="http://www.michaeltroth.com/index.xml" rel="alternate" type="application/rss+xml" title="Musings of Software Dev" />
+
+    <link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='genericons-css' href='http://www.michaeltroth.com/genericons/genericons.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='twentyfourteen-style-css' href='http://www.michaeltroth.com/css/style.css' type='text/css' media='all' />
+	
+	<script type='text/javascript' src='http://www.michaeltroth.com/js/jquery/jquery.js'></script>
+	<script type='text/javascript' src='http://www.michaeltroth.com/js/jquery/jquery-migrate.min.js'></script>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="home blog masthead-fixed list-view full-width grid">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="http://www.michaeltroth.com/index.html" rel="home">Musings of Software Dev</a></h1>
+
+			<div class="search-toggle">
+				<a href="#search-container" class="screen-reader-text">Search</a>
+			</div>
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle">Primary Menu</button>
+				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+				<div class="nav-menu">
+					<ul>
+						
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+                <script type="text/javascript">
+    function site_search(obj) {
+    	var host = window.location.host;
+        obj.q.value = "site:" + host + " " + obj.ss_q.value;
+    }
+</script>
+
+<aside id="search-3" class="widget widget_search">
+	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
+
+	<input name="q" type="hidden" />
+	    <label>
+	        <span class="screen-reader-text">Search for:</span>
+	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
+	    </label>
+	    <input type="submit" value="Search" class="search-submit" />
+	</form>
+</aside>
+
+			</div>
+		</div>
+	</header>
+
+	<div id="main" class="site-main">
+
+
+<div id="main-content" class="main-content">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+                <a href="http://www.michaeltroth.com/categories/learning/index.html" rel="category">Learning</a>
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Everything is a Hammer</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://www.michaeltroth.com/post/2015/07/16/everything-is-a-hammerindex.html" rel="bookmark">
+					<time class="entry-date" datetime="2015-07-16 22:13:36 -0700 PDT">
+						July 16
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+
+	<div class="entry-content">
+		
+
+<h1 id="where-everything-is-a-hammer:3288c8954fcb056119744e158e57e9a2">Where Everything is a Hammer</h1>
+
+<p>When I was teaching a seminar on the use of Powershell to some first time developers. One of the students in the class, asked me if there was anything that could be done to solve a problem he had. Basically he had a problem to where he needed to scrape content from a website and make it available to another process for ingestion into their CMS.</p>
+
+<p>The way he tackled the solution was to create a C# console line and application and use something like RegEx or HTML Agility pack. While the solution did work. It proved to the programmer to be very time consuming and labor intensive. And I imagine, it was also time consuming, in the time he spent cycling ideas to get to the solution.</p>
+
+<p>A common thing I see, at least in my local community in the Microsoft camp is to learn one language and try to use that language everywhere. In our industry this tends to be known as the &ldquo;Hammer Fallacy&rdquo;.</p>
+
+<p><img src="https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/7/79/79359/hammer-f.jpg?1393432661" alt="I Got that nail" /></p>
+
+<p>By the way, this isn&rsquo;t unique to green horn programmers. Many a people in the development camps I frequently visit, always try to solve a solution in their tool of choice. That is why it is rare at least in my community to see people present on things like Python, Go, PowerShell or Ruby. They have built up thier prejeduices by what other people have said.</p>
+
+<p>Anwyway, since I was teaching Powershell the student asked me if there was a way that we could solve that problem with PowerAhell. At this point in the seminar I showed some basic stuff like. Branching, Loop Structures, Redirecting Output Buffers, Piping and how to get help.</p>
+
+<p>While, I knew in my head that there was one, we went down the road and had the group of 5 students assemble and work as a team.</p>
+
+<p><img src="http://www.dragonbridgecapital.com/wp-content/uploads/2013/03/Teamwork.jpg" alt="Team Work in action" /></p>
+
+<p>They brought together a mob programming group, and I had them think about the problem. I got to say it&rsquo;s very rewarding when you can set a task and see a group not of individuals, but of team members. Give it the ol&rsquo; college try. Anyway, they were able to come up with a solution in about 15 mins, with some minor proctoring from me. But the student who asked the question came to a realization that it would of been much simpler to do it in PowerShell.</p>
+
+<p>The final result was <strong>literly one line of code</strong>. It did it well enough, and fast enough. And makes me realize how in the community that I am part of that most members will reach for that hammer and try to solve a problem that might best well be attempted in another language or high level tool or low level tool for that mater. And hold on and clutch that hammer. By the way, I am not judging those who do. I was once one of those people too. I would literally try to do all my work in C#. It is when you experience the amount of time that can be saved by using a language more appropriate for a domain it makes you start to rethink your approach.</p>
+
+<p><img src="http://media.tumblr.com/548714fc3ed7a99c8e680a704b48e45d/tumblr_inline_ne9gmaSSZz1qersu1.jpg" alt="Good Enough" /></p>
+
+<p>Even, if the solution has to be coded in your tool of choice because of tool constraints or performance constraints. You can still do some exploratory programming with another language and see if you can grok the problem, by using a highlevel language. For those curious here was the final solution we came up to as a group.</p>
+
+<p>This was the first line of code I gave them.</p>
+
+<pre><code>  $rawscrape = Invoke-WebRequest &quot;http://www.slidemeister.com/forums/index.php?topic=6985.0&quot;
+</code></pre>
+
+<p>They were able to come up with this to get to the rest of the solution.</p>
+
+<pre><code>  $rawscrape.Links | select href | where href -Like *www.youtube.com*
+</code></pre>
+
+<p>The final solution is this.</p>
+
+<pre><code>  Invoke-WebRequest &quot;http://www.slidemeister.com/forums/index.php?topic=6985.0&quot; | $rawscrape.Links | select href -unique | where href -Like *www.youtube.com*
+</code></pre>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">
+			
+                <a href="http://www.michaeltroth.com/tags/powershell/index.html" rel="tag">Powershell</a>
+            
+                <a href="http://www.michaeltroth.com/tags/teamwork/index.html" rel="tag">Teamwork</a>
+            
+		</span>
+	</footer>
+</article> 
+
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Make Moving Your Builds Easy With MoveBuild</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://www.michaeltroth.com/post/2014/02/16/make-moving-builds-easy-with-movebuildindex.html" rel="bookmark">
+					<time class="entry-date" datetime="2014-02-16 20:00:56 -0700 -0700">
+						February 16
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+
+	<div class="entry-content">
+		
+
+<h2 id="make-moving-your-builds-easy-with-movebuild:8f035773adafcaaa703c641c80622cbd">Make Moving Your Builds Easy With MoveBuild</h2>
+
+<p>Using a simple repeatable process you will be able to move your builds to each environment.</p>
+
+<h3 id="understanding-the-move-workflow:8f035773adafcaaa703c641c80622cbd">Understanding the Move Workflow</h3>
+
+<p>As you move each build to each environment you want to create a pipeline. Where each build is considered a possible [[abbr title=&ldquo;Release Candidate&rdquo;]]RC[[/abbr]]. Promotion of each build requires that it passes a series of tests, with each promotion the level of testing becomes more intense. For example, moving the build to [[abbr title=&ldquo;Development&rdquo;]]Dev[[/abbr]] would only really require that the build can compile and pass a series of unit tests (if any are defined). Whilst, this is a simplistic test it gets you the necessary amount of feedback. As you progress to each level from [[abbr title=&ldquo;Development&rdquo;]]Dev[[/abbr]] To [[abbr title=&ldquo;Quality Assurance&rdquo;]]QA[[/abbr]] the tests become more stringent and the failure criteria becomes more easily defined.</p>
+
+<p><img src="http://s3.amazonaws.com/mxrss-blog-images/63528178062.png" alt="Sample Promotion" /></p>
+
+<p>The reason for this as we get closer to releasing a build to production we want to make certain at all costs that we will not have to rollback or at the very least make a rollback an infrequent event.</p>
+
+<p>Having been bitten by bad deployments, I can tell you that its important to make your deployment the SAME <em>regardless</em> of where you deploy the binaries. This means that every time you move a piece a code it should be the same process, having differing ways of moving code from environment to environment could hide potential deployment problems.</p>
+
+<blockquote>
+<p>every time you move a piece a code it should be the same process, having differing ways of moving code from environment to environment could hide potential deployment problems</p>
+</blockquote>
+
+<p>In addition your should make sure that the following are also adhered to.</p>
+
+<ul>
+<li>Build your binaries once</li>
+<li>Configuration changes should be minimal.</li>
+<li>Follow your deployment process in each environment, the same. Treat it like production.</li>
+<li>Accept a deployment failure and kill that [[abbr title=&ldquo;Release Canidate&rdquo;]]RC[[/abbr]]</li>
+</ul>
+
+<h3 id="a-simple-build-promotion-script:8f035773adafcaaa703c641c80622cbd">A Simple Build Promotion Script</h3>
+
+<p>I needed to ensure that the process I am using is the same as I deploy to each environment, Below is a script that I came up with that ensures that each move is atomic and follows the same structure.</p>
+
+<script src="https://gist.github.com/mxrss/8816312.js"></script>
+
+<h4 id="additional-resources:8f035773adafcaaa703c641c80622cbd">Additional Resources</h4>
+
+<ul>
+<li><p><a href="http://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery</a></p></li>
+
+<li><p><a href="http://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912">Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation (Addison-Wesley Signature Series (Fowler))</a></p></li>
+</ul>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">
+			
+                <a href="http://www.michaeltroth.com/tags/powershell/index.html" rel="tag">Powershell</a>
+            
+                <a href="http://www.michaeltroth.com/tags/build-auotmation/index.html" rel="tag">Build Auotmation</a>
+            
+                <a href="http://www.michaeltroth.com/tags/alm/index.html" rel="tag">ALM</a>
+            
+		</span>
+	</footer>
+</article> 
+
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Web API: Extending Web Api Help</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://www.michaeltroth.com/posts/2013/12/16/web-api--extending-web-api-helpindex.html" rel="bookmark">
+					<time class="entry-date" datetime="2013-12-16 20:07:05 -0700 -0700">
+						December 16
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+
+	<div class="entry-content">
+		
+
+<h2 id="web-api-extending-web-api-help:c1de8bff3970aee027ae7deb72666e98">Web API: Extending Web Api Help</h2>
+
+<p>One of the best features of web API is its access to tools to create useful documentation for RPC over HTTP protocols.</p>
+
+<h3 id="web-api-help-in-a-nutshell:c1de8bff3970aee027ae7deb72666e98">Web Api Help In a Nutshell</h3>
+
+<p>Web api help provides us the ability out of the box to build a useful help system for our [[abbr title=&ldquo;hyper text transfer protocol&rdquo;]]HTTP[[/abbr]] [[abbr title=&ldquo;Remote Procedure Call&rdquo;]]RPC[[/abbr]] [[abbr title=&ldquo;Application Programming Interface&rdquo;]]API&rsquo;s[[/abbr]]. The way it works is that it actually uses reflection which is cached at the controller context to create these things called <code>ActionDescriptors</code>. These <code>ActionDescriptors</code> will actually provide a context to the web [[abbr title=&ldquo;Application Programming Interface&rdquo;]]API[[/abbr]] on what is the Route To Actually Hit your [[abbr title=&ldquo;Application Programming Interface&rdquo;]]API[[/abbr]] end point.</p>
+
+<p>Knowing this, we can customize the input and output parameters via [[abbr title=&ldquo;extensible markup language&rdquo;]]XML[[/abbr]] documentation comments like the ones below.</p>
+
+<p>[[pre]]
+/// &lt;summary&gt;
+///  This class performs an important function.
+/// &lt;/summary&gt;
+[[/pre]]</p>
+
+<p>We can also customize sample [[abbr title=&ldquo;javascript object notation&rdquo;]]JSON[[/abbr]] objects or other Media Type outputs. In fact if you do not specify any sample objects, sample objects are generated automatically for you. While this can be cool it can lead to some unintended behaviors so be careful and when distributing your API you should have some kind of good object that can be demonstrated to users. As in something you may actually see.</p>
+
+<blockquote>
+<p><strong>PRO TIP</strong> Consider overriding default objects with actual things your users might see in production.</p>
+</blockquote>
+
+<p>Web [[abbr title=&ldquo;Application Programming Interface&rdquo;]]API[[/abbr]] Help package also has other added benefits. For example you can customize comments on parameters of a <code>ApiController</code>.</p>
+
+<blockquote>
+<p>For in depth information on web api help pages visit this <a href="http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages">site</a>.</p>
+</blockquote>
+
+<h3 id="adding-web-api-help-pages-to-your-projects:c1de8bff3970aee027ae7deb72666e98">Adding Web Api Help Pages To Your Projects</h3>
+
+<p>By default they are usually installed when you create a new Web API project inside visual studio. If you need to add the package manually because you are creating a very base project then you will need to use the following at the Package Manager Console.</p>
+
+<p>[[pre]]
+Install-Package Microsoft.AspNet.WebApi.HelpPage -Version 5.0.0[[/pre]]</p>
+
+<h3 id="pages-are-though-kind-of-meh:c1de8bff3970aee027ae7deb72666e98">Pages are though kind of meh.</h3>
+
+<p>Unfortunately, with all good intentions of the Web [[abbr title=&ldquo;application programming interface&rdquo;]]Api[[/abbr]] Help Page project. It kind of leaves with little room to customizing the pages or providing more scope or emphasis. For example I can not highlight specific things about the api, or even provide some sample code for the consumer to use or even a sample HTTP request.</p>
+
+<p><strong>Now</strong>, I know if you have to have a document to describe your [[abbr title=&ldquo;application programming interface&rdquo;]]API[[/abbr]] <a href="http://en.wikipedia.org/wiki/HATEOAS">its not considered RESTfull.</a> But Sometimes its [[abbr title=&ldquo;okay&rdquo;]]OK[[/abbr]] to sacrifice a purists definition in order to get something done. And sometimes we are really just stuck with making something more [[abbr title=&ldquo;Remote Procedure Call&rdquo;]]RPC[[/abbr]] like or maybe we started with that.</p>
+
+<blockquote>
+<p>I am going to leave the discussion on purists vs pragmatist alone, because that can usually start some zealous dogmatic battles for <em>both sides</em></p>
+</blockquote>
+
+<h3 id="making-it-a-little-easier-on-the-eyes:c1de8bff3970aee027ae7deb72666e98">Making It a little easier on the eyes</h3>
+
+<p>Well one of the great things about this is that with a  little imagination we can change this and add some useful formatting and structure to our documents.</p>
+
+<h3 id="we-could-use-abbr-title-hyper-text-markup-language-html-abbr:c1de8bff3970aee027ae7deb72666e98">We could use [[abbr title=&ldquo;Hyper Text Markup Language&rdquo;]]HTML[[/abbr]]</h3>
+
+<p>We could just use ### We could use [[abbr title=&ldquo;Hyper Text Markup Language&rdquo;]]HTML[[/abbr]]. I mean it has everything we really need and can format some documents beautifully.</p>
+
+<p>[[pre]]
+/// &lt;summary&gt;
+///  This class &lt;b&gt;performs&lt;/b&gt; an important function.
+/// &lt;/summary&gt;
+[[/pre]]</p>
+
+<p>And this is all well and good however we are going to get errors in our [[abbr title=&ldquo;extensible markup language&rdquo;]]XML[[/abbr]] to where it won&rsquo;t render right.</p>
+
+<h3 id="what-to-do:c1de8bff3970aee027ae7deb72666e98">What to do?</h3>
+
+<p>People who have used apps like <a href="http://www.github.com">GitHub</a> or online apps like <a href="http://www.assembla.com">Assembla</a>. Know that you can use <a href="http://en.wikipedia.org/wiki/Markdown">MarkDown</a> to express themselves with an easy to read document structure that does not get in the way by adding superficial document structure.</p>
+
+<pre><code>  /// &amp;lt;summary&amp;gt;
+  ///  This class **performs** an important function.
+  /// &amp;lt;/summary&amp;gt;
+</code></pre>
+
+<p>Now obviously, this won&rsquo;t work out of the box. But with some simple changes to the project we can get this to work.</p>
+
+<p>First things first download the following package.</p>
+
+<pre><code>  Install-Package MarkdownDeep.NET -Version 1.5
+</code></pre>
+
+<p>Next, add the code below to HelpPage area in the project.</p>
+
+<pre><code>  namespace System.Web.Mvc.Html
+  {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Web;
+  using System.Web.Mvc;
+
+  public static class MarkdownHelper
+  {
+      public static MvcHtmlString FromMarkdown(this HtmlHelper helper, string text)
+      {
+          var instance = new MarkdownDeep.Markdown();
+
+          instance.SafeMode = false;
+          instance.ExtraMode = true;
+          text = MakeCompatiableString(text);
+          text = text.Replace(&quot;[[&quot;, &quot;&lt;&quot;).Replace(&quot;]]&quot;, &quot;&gt;&quot;);
+
+          return MvcHtmlString.Create(instance.Transform(text.Trim()));
+      }
+
+      private static string MakeCompatiableString(string text)
+      {
+          if (string.IsNullOrEmpty(text)){
+              return string.Empty;
+          }
+
+          var lines = text.Split('\n');
+          return string.Concat(lines.Select(x =&gt; x.TrimStart() + &quot;\n&quot;).ToList());
+      }
+
+  }
+  }
+</code></pre>
+
+<p>Finally, make some adjustments to the following file. Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel</p>
+
+<p>Under the <strong>&lt;H2&gt;Summary&lt;/H2&gt;</strong> modify the code.</p>
+
+<pre>
+&gt;h2&lt;Summary&gt;/h2&lt;
+
+    @if (description.Documentation != null)
+    {
+        &gt;p&lt;@Html.FromMarkdown(description.Documentation)&gt;/p&lt;
+    }
+    else
+    {
+        &gt;p&lt;No documentation available.&gt;/p&lt;
+    }
+</pre>
+
+<h3 id="additional-resources:c1de8bff3970aee027ae7deb72666e98">Additional Resources</h3>
+
+<ol>
+<li><a href="http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages">Creating Help Pages For ASP.net Web API</a></li>
+<li><a href="http://blogs.msdn.com/b/yaohuang1/archive/2013/01/20/design-time-generation-of-help-page-or-proxy-for-asp-net-web-api.aspx">Design Time Generation of Help Page</a></li>
+</ol>
+
+<h4 id="references:c1de8bff3970aee027ae7deb72666e98">References</h4>
+
+<ol>
+<li><a href="http://blogs.msdn.com/b/yaohuang1/archive/tags/documentation/">http://blogs.msdn.com/b/yaohuang1/archive/tags/documentation/</a></li>
+</ol>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">
+			
+                <a href="http://www.michaeltroth.com/tags/web-api/index.html" rel="tag">web api</a>
+            
+                <a href="http://www.michaeltroth.com/tags/help/index.html" rel="tag">help</a>
+            
+                <a href="http://www.michaeltroth.com/tags/nuget/index.html" rel="tag">nuget</a>
+            
+		</span>
+	</footer>
+</article> 
+
+			
+
+		</div>
+	</div>
+	<div id="secondary">
+
+	
+
+	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+
+		<script type="text/javascript">
+    function site_search(obj) {
+    	var host = window.location.host;
+        obj.q.value = "site:" + host + " " + obj.ss_q.value;
+    }
+</script>
+
+<aside id="search-3" class="widget widget_search">
+	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
+
+	<input name="q" type="hidden" />
+	    <label>
+	        <span class="screen-reader-text">Search for:</span>
+	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
+	    </label>
+	    <input type="submit" value="Search" class="search-submit" />
+	</form>
+</aside>
+
+
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+
+	
+	<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+			
+			<li>
+				<a href="http://www.michaeltroth.com/post/2015/07/16/everything-is-a-hammer/index.html">Everything is a Hammer</a>
+			</li>
+			
+			<li>
+				<a href="http://www.michaeltroth.com/post/2014/02/16/make-moving-builds-easy-with-movebuild/index.html">Make Moving Your Builds Easy With MoveBuild</a>
+			</li>
+			
+			<li>
+				<a href="http://www.michaeltroth.com/posts/2013/12/16/web-api--extending-web-api-help/index.html">Web API: Extending Web Api Help</a>
+			</li>
+			
+		</ul>
+	
+</aside>
+
+
+		<aside id="categories-3" class="widget widget_categories">
+
+	<h1 class="widget-title">Categories</h1>
+
+	<ul>
+		
+		
+
+		<li class="cat-item">
+			<a href="http://www.michaeltroth.com/categories/learning/index.html">Learning</a>
+		</li>
+
+		
+
+		<li class="cat-item">
+			<a href="http://www.michaeltroth.com/categories/powershell/index.html">Powershell</a>
+		</li>
+
+		
+
+	</ul>
+
+</aside>
+
+
+	</div>
+
+</div>
+
+</div>
+
+		</div>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			<div class="site-info">
+				<a href="http://gohugo.io">Proudly powered by Hugo</a>
+			</div>
+		</footer>
+	</div>
+
+	<script type='text/javascript' src='http://www.michaeltroth.com/js/functions.js'></script>
+</body>
+</html>
+

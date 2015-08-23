@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Musings of Software Dev</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<!--[if lt IE 9]>
+	<script src="http://www.michaeltroth.com//js/html5.js"></script>
+	<![endif]-->
+
+    <link href="http://www.michaeltroth.com/index.xml" rel="alternate" type="application/rss+xml" title="Musings of Software Dev" />
+
+    <link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='genericons-css' href='http://www.michaeltroth.com/genericons/genericons.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='twentyfourteen-style-css' href='http://www.michaeltroth.com/css/style.css' type='text/css' media='all' />
+	
+	<script type='text/javascript' src='http://www.michaeltroth.com/js/jquery/jquery.js'></script>
+	<script type='text/javascript' src='http://www.michaeltroth.com/js/jquery/jquery-migrate.min.js'></script>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="home blog masthead-fixed list-view full-width grid">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="http://www.michaeltroth.com/index.html" rel="home">Musings of Software Dev</a></h1>
+
+			<div class="search-toggle">
+				<a href="#search-container" class="screen-reader-text">Search</a>
+			</div>
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle">Primary Menu</button>
+				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+				<div class="nav-menu">
+					<ul>
+						
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+                <script type="text/javascript">
+    function site_search(obj) {
+    	var host = window.location.host;
+        obj.q.value = "site:" + host + " " + obj.ss_q.value;
+    }
+</script>
+
+<aside id="search-3" class="widget widget_search">
+	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
+
+	<input name="q" type="hidden" />
+	    <label>
+	        <span class="screen-reader-text">Search for:</span>
+	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
+	    </label>
+	    <input type="submit" value="Search" class="search-submit" />
+	</form>
+</aside>
+
+			</div>
+		</div>
+	</header>
+
+	<div id="main" class="site-main">
+
+
+<div id="main-content" class="main-content">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			<header class="archive-header">
+				<h1 class="archive-title">Nuget Archive</h1>
+			</header>
+
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Web API: Extending Web Api Help</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://www.michaeltroth.com/posts/2013/12/16/web-api--extending-web-api-helpindex.html" rel="bookmark">
+					<time class="entry-date" datetime="2013-12-16 20:07:05 -0700 -0700">
+						December 16
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+
+	<div class="entry-content">
+		
+
+<h2 id="web-api-extending-web-api-help:c1de8bff3970aee027ae7deb72666e98">Web API: Extending Web Api Help</h2>
+
+<p>One of the best features of web API is its access to tools to create useful documentation for RPC over HTTP protocols.</p>
+
+<h3 id="web-api-help-in-a-nutshell:c1de8bff3970aee027ae7deb72666e98">Web Api Help In a Nutshell</h3>
+
+<p>Web api help provides us the ability out of the box to build a useful help system for our [[abbr title=&ldquo;hyper text transfer protocol&rdquo;]]HTTP[[/abbr]] [[abbr title=&ldquo;Remote Procedure Call&rdquo;]]RPC[[/abbr]] [[abbr title=&ldquo;Application Programming Interface&rdquo;]]API&rsquo;s[[/abbr]]. The way it works is that it actually uses reflection which is cached at the controller context to create these things called <code>ActionDescriptors</code>. These <code>ActionDescriptors</code> will actually provide a context to the web [[abbr title=&ldquo;Application Programming Interface&rdquo;]]API[[/abbr]] on what is the Route To Actually Hit your [[abbr title=&ldquo;Application Programming Interface&rdquo;]]API[[/abbr]] end point.</p>
+
+<p>Knowing this, we can customize the input and output parameters via [[abbr title=&ldquo;extensible markup language&rdquo;]]XML[[/abbr]] documentation comments like the ones below.</p>
+
+<p>[[pre]]
+/// &lt;summary&gt;
+///  This class performs an important function.
+/// &lt;/summary&gt;
+[[/pre]]</p>
+
+<p>We can also customize sample [[abbr title=&ldquo;javascript object notation&rdquo;]]JSON[[/abbr]] objects or other Media Type outputs. In fact if you do not specify any sample objects, sample objects are generated automatically for you. While this can be cool it can lead to some unintended behaviors so be careful and when distributing your API you should have some kind of good object that can be demonstrated to users. As in something you may actually see.</p>
+
+<blockquote>
+<p><strong>PRO TIP</strong> Consider overriding default objects with actual things your users might see in production.</p>
+</blockquote>
+
+<p>Web [[abbr title=&ldquo;Application Programming Interface&rdquo;]]API[[/abbr]] Help package also has other added benefits. For example you can customize comments on parameters of a <code>ApiController</code>.</p>
+
+<blockquote>
+<p>For in depth information on web api help pages visit this <a href="http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages">site</a>.</p>
+</blockquote>
+
+<h3 id="adding-web-api-help-pages-to-your-projects:c1de8bff3970aee027ae7deb72666e98">Adding Web Api Help Pages To Your Projects</h3>
+
+<p>By default they are usually installed when you create a new Web API project inside visual studio. If you need to add the package manually because you are creating a very base project then you will need to use the following at the Package Manager Console.</p>
+
+<p>[[pre]]
+Install-Package Microsoft.AspNet.WebApi.HelpPage -Version 5.0.0[[/pre]]</p>
+
+<h3 id="pages-are-though-kind-of-meh:c1de8bff3970aee027ae7deb72666e98">Pages are though kind of meh.</h3>
+
+<p>Unfortunately, with all good intentions of the Web [[abbr title=&ldquo;application programming interface&rdquo;]]Api[[/abbr]] Help Page project. It kind of leaves with little room to customizing the pages or providing more scope or emphasis. For example I can not highlight specific things about the api, or even provide some sample code for the consumer to use or even a sample HTTP request.</p>
+
+<p><strong>Now</strong>, I know if you have to have a document to describe your [[abbr title=&ldquo;application programming interface&rdquo;]]API[[/abbr]] <a href="http://en.wikipedia.org/wiki/HATEOAS">its not considered RESTfull.</a> But Sometimes its [[abbr title=&ldquo;okay&rdquo;]]OK[[/abbr]] to sacrifice a purists definition in order to get something done. And sometimes we are really just stuck with making something more [[abbr title=&ldquo;Remote Procedure Call&rdquo;]]RPC[[/abbr]] like or maybe we started with that.</p>
+
+<blockquote>
+<p>I am going to leave the discussion on purists vs pragmatist alone, because that can usually start some zealous dogmatic battles for <em>both sides</em></p>
+</blockquote>
+
+<h3 id="making-it-a-little-easier-on-the-eyes:c1de8bff3970aee027ae7deb72666e98">Making It a little easier on the eyes</h3>
+
+<p>Well one of the great things about this is that with a  little imagination we can change this and add some useful formatting and structure to our documents.</p>
+
+<h3 id="we-could-use-abbr-title-hyper-text-markup-language-html-abbr:c1de8bff3970aee027ae7deb72666e98">We could use [[abbr title=&ldquo;Hyper Text Markup Language&rdquo;]]HTML[[/abbr]]</h3>
+
+<p>We could just use ### We could use [[abbr title=&ldquo;Hyper Text Markup Language&rdquo;]]HTML[[/abbr]]. I mean it has everything we really need and can format some documents beautifully.</p>
+
+<p>[[pre]]
+/// &lt;summary&gt;
+///  This class &lt;b&gt;performs&lt;/b&gt; an important function.
+/// &lt;/summary&gt;
+[[/pre]]</p>
+
+<p>And this is all well and good however we are going to get errors in our [[abbr title=&ldquo;extensible markup language&rdquo;]]XML[[/abbr]] to where it won&rsquo;t render right.</p>
+
+<h3 id="what-to-do:c1de8bff3970aee027ae7deb72666e98">What to do?</h3>
+
+<p>People who have used apps like <a href="http://www.github.com">GitHub</a> or online apps like <a href="http://www.assembla.com">Assembla</a>. Know that you can use <a href="http://en.wikipedia.org/wiki/Markdown">MarkDown</a> to express themselves with an easy to read document structure that does not get in the way by adding superficial document structure.</p>
+
+<pre><code>  /// &amp;lt;summary&amp;gt;
+  ///  This class **performs** an important function.
+  /// &amp;lt;/summary&amp;gt;
+</code></pre>
+
+<p>Now obviously, this won&rsquo;t work out of the box. But with some simple changes to the project we can get this to work.</p>
+
+<p>First things first download the following package.</p>
+
+<pre><code>  Install-Package MarkdownDeep.NET -Version 1.5
+</code></pre>
+
+<p>Next, add the code below to HelpPage area in the project.</p>
+
+<pre><code>  namespace System.Web.Mvc.Html
+  {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Web;
+  using System.Web.Mvc;
+
+  public static class MarkdownHelper
+  {
+      public static MvcHtmlString FromMarkdown(this HtmlHelper helper, string text)
+      {
+          var instance = new MarkdownDeep.Markdown();
+
+          instance.SafeMode = false;
+          instance.ExtraMode = true;
+          text = MakeCompatiableString(text);
+          text = text.Replace(&quot;[[&quot;, &quot;&lt;&quot;).Replace(&quot;]]&quot;, &quot;&gt;&quot;);
+
+          return MvcHtmlString.Create(instance.Transform(text.Trim()));
+      }
+
+      private static string MakeCompatiableString(string text)
+      {
+          if (string.IsNullOrEmpty(text)){
+              return string.Empty;
+          }
+
+          var lines = text.Split('\n');
+          return string.Concat(lines.Select(x =&gt; x.TrimStart() + &quot;\n&quot;).ToList());
+      }
+
+  }
+  }
+</code></pre>
+
+<p>Finally, make some adjustments to the following file. Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel</p>
+
+<p>Under the <strong>&lt;H2&gt;Summary&lt;/H2&gt;</strong> modify the code.</p>
+
+<pre>
+&gt;h2&lt;Summary&gt;/h2&lt;
+
+    @if (description.Documentation != null)
+    {
+        &gt;p&lt;@Html.FromMarkdown(description.Documentation)&gt;/p&lt;
+    }
+    else
+    {
+        &gt;p&lt;No documentation available.&gt;/p&lt;
+    }
+</pre>
+
+<h3 id="additional-resources:c1de8bff3970aee027ae7deb72666e98">Additional Resources</h3>
+
+<ol>
+<li><a href="http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages">Creating Help Pages For ASP.net Web API</a></li>
+<li><a href="http://blogs.msdn.com/b/yaohuang1/archive/2013/01/20/design-time-generation-of-help-page-or-proxy-for-asp-net-web-api.aspx">Design Time Generation of Help Page</a></li>
+</ol>
+
+<h4 id="references:c1de8bff3970aee027ae7deb72666e98">References</h4>
+
+<ol>
+<li><a href="http://blogs.msdn.com/b/yaohuang1/archive/tags/documentation/">http://blogs.msdn.com/b/yaohuang1/archive/tags/documentation/</a></li>
+</ol>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">
+			
+                <a href="http://www.michaeltroth.com/tags/web-api/index.html" rel="tag">web api</a>
+            
+                <a href="http://www.michaeltroth.com/tags/help/index.html" rel="tag">help</a>
+            
+                <a href="http://www.michaeltroth.com/tags/nuget/index.html" rel="tag">nuget</a>
+            
+		</span>
+	</footer>
+</article> 
+
+			
+		
+		</div>
+	</div>
+	<div id="secondary">
+
+	
+
+	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+
+		<script type="text/javascript">
+    function site_search(obj) {
+    	var host = window.location.host;
+        obj.q.value = "site:" + host + " " + obj.ss_q.value;
+    }
+</script>
+
+<aside id="search-3" class="widget widget_search">
+	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
+
+	<input name="q" type="hidden" />
+	    <label>
+	        <span class="screen-reader-text">Search for:</span>
+	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
+	    </label>
+	    <input type="submit" value="Search" class="search-submit" />
+	</form>
+</aside>
+
+
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+
+	
+	<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+			
+			<li>
+				<a href="http://www.michaeltroth.com/posts/2013/12/16/web-api--extending-web-api-help/index.html">Web API: Extending Web Api Help</a>
+			</li>
+			
+		</ul>
+	
+</aside>
+
+
+		<aside id="categories-3" class="widget widget_categories">
+
+	<h1 class="widget-title">Categories</h1>
+
+	<ul>
+		
+		
+
+		<li class="cat-item">
+			<a href="http://www.michaeltroth.com/categories/learning/index.html">Learning</a>
+		</li>
+
+		
+
+		<li class="cat-item">
+			<a href="http://www.michaeltroth.com/categories/powershell/index.html">Powershell</a>
+		</li>
+
+		
+
+	</ul>
+
+</aside>
+
+
+	</div>
+
+</div>
+
+</div>
+
+		</div>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			<div class="site-info">
+				<a href="http://gohugo.io">Proudly powered by Hugo</a>
+			</div>
+		</footer>
+	</div>
+
+	<script type='text/javascript' src='http://www.michaeltroth.com/js/functions.js'></script>
+</body>
+</html>

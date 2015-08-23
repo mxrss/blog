@@ -1,0 +1,4 @@
+baseurl = "http://google.com/"
+languageCode = "en-us"
+title = "Musings of Software Dev"
+theme = "themes/hugo-uno"
