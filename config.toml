@@ -1,4 +1,4 @@
-baseurl = "http://google.com/"
+baseurl = "http://www.michaeltroth.com/"
 languageCode = "en-us"
 title = "Musings of Software Dev"
-theme = "themes/hugo-uno"
+theme = "themes/twentyfourteen"
